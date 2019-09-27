@@ -13,7 +13,7 @@
 # or by this short link `wget https://bit.ly/2miZQZR | bash`
 echo "Setup runs ..."
 
-echo "Install openssh-server ..."
+echo "Install openssh-server:"
 sudo apt install openssh-server
 
 exit
