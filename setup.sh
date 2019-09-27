@@ -50,4 +50,33 @@ echo "Install GIT:"
 sudo apt install git
 echo -e "\e[30;48;5;82m git installed \e[0m"
 
+echo "Install GIT:"
+sudo apt install git
+echo -e "\e[30;48;5;82m git installed \e[0m"
+
+echo "Install Docker last version and dependencies:"
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common
+
+echo "Add Docker’s official GPG key:"
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+echo "Add Docker’s apt repository"
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/debian \
+   $(lsb_release -cs) \
+   stable"
+
+echo "Update apt"
+sudo apt-get update
+
+echo "Install docker-ce docker-ce-cli containerd.io"
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+echo -e "\e[30;48;5;82m docker installed \e[0m"
+
+
 exit
