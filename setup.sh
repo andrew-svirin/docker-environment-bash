@@ -12,8 +12,6 @@
 echo "Setup runs ...\n"
 
 echo "Install openssh-server ...\n"
-sudo apt install openssh-server
-
-
+/usr/sbin/sudo apt install openssh-server
 
 exit
