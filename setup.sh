@@ -31,9 +31,9 @@ echo "Prepare folder: $WWW_DIR"
 sudo mkdir $WWW_DIR
 sudo chmod 777 $WWW_DIR
 
-echo "Add user group: www-data"
+echo "Add user group: www-data. Add current user to group www-data"
 sudo groupadd www-data
-sudo /usr/sbin/usermod -aG www-data
+sudo /usr/sbin/usermod -aG www-data $USER
 
 echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m for access dir \e[0m \e[38;5;198m $WWW_DIR \e[0m :"
 SAMBA_CONF_TMP=smb.conf
