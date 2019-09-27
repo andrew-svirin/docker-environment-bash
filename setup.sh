@@ -92,4 +92,11 @@ fi
 DOCKER_COMPOSE_VERSION=`docker-compose --version`
 echo -e "\e[30;48;5;82m docker-compose installed \e[0m \e[38;5;198m $DOCKER_COMPOSE_VERSION \e[0m"
 
+echo "Add current user to group docker"
+sudo /usr/sbin/usermod -a -G docker $USER
+echo "Add autostrat docker on boot"
+sudo systemctl enable docker
+echo "Start docker right now"
+sudo systemctl start docker
+
 exit
