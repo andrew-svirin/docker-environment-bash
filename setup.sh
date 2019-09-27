@@ -6,5 +6,5 @@
 # - Installs docker
 # - Installs docker-compose
 # - Installs git
-# For launch command add current user to sudo group `usermod -aG sudo __CURRENT_USER__` and re-login.
+# For launch command add current user to sudo group `/usr/sbin/usermod -aG sudo __CURRENT_USER__` and re-login.
 # Launch by command `wget https://github.com/andrew-svirin/docker-environment-bash/blob/master/setup.sh | sudo bash`
