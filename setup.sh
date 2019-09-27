@@ -46,4 +46,8 @@ sudo service smbd restart
 IP=`ip addr | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p"`
 echo -e "\e[30;48;5;82m samba configured \e[0m Use \e[38;5;198m \\\\\\\\$IP\\\\www \e[0m to mount disk in Windows"
 
+echo "Install GIT:"
+sudo apt install git
+echo -e "\e[30;48;5;82m git installed \e[0m"
+
 exit
