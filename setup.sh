@@ -79,7 +79,8 @@ sudo apt-get update
 
 echo "Install docker-ce docker-ce-cli containerd.io"
 sudo apt-get install docker-ce docker-ce-cli containerd.io
-echo -e "\e[30;48;5;82m docker installed \e[0m"
+DOCKER_VERSION=`docker --version`
+echo -e "\e[30;48;5;82m docker installed \e[0m \e[38;5;198m $DOCKER_VERSION \e[0m"
 
 # Instructions https://docs.docker.com/compose/install/
 echo "Install docker-compose"
