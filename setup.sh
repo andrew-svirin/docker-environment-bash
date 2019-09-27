@@ -21,7 +21,7 @@ echo "Install samba:"
 sudo apt install samba
 echo -e "\e[30;48;5;82m samba installed \e[0m"
 
-echo "Make samba config backup"
+echo "Make samba config backup:"
 SAMBA_CONF_BACKUP=/etc/samba/smb.conf.$(date '+%d-%m-%Y-%H-%M-%S')
 sudo cp /etc/samba/smb.conf $SAMBA_CONF_BACKUP
 echo -e "\e[30;48;5;82m samba config backuped to: \e[0m \e[38;5;198m $SAMBA_CONF_BACKUP \e[0m"
