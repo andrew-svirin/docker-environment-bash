@@ -10,7 +10,7 @@
 # For launch command:
 # - install sudo `apt install sudo` by superuser.
 # - add current user to sudo group `/usr/sbin/usermod -aG sudo __CURRENT_USER__` by superuser and re-login.
-# Launch by command `wget https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/setup.sh | /usr/sbin/sudo bash` 
+# Launch by command `wget https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/setup.sh | sudo bash` 
 # or by this short link `wget https://bit.ly/2miZQZR | bash`
 echo "Setup runs ..."
 
