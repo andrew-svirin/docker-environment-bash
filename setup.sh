@@ -16,4 +16,7 @@ echo "Setup runs ..."
 echo "Install openssh-server:"
 sudo apt install openssh-server
 
+echo "Install samba:"
+sudo apt install samba
+
 exit
