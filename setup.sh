@@ -10,8 +10,8 @@
 # For launch command:
 # - install sudo `apt install sudo` by superuser.
 # - add current user to sudo group `/usr/sbin/usermod -aG sudo __CURRENT_USER__` by superuser and re-login.
-# Launch by command `wget https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/setup.sh | bash` 
-# or by this short link `wget https://bit.ly/2miZQZR | bash`
+# Launch by command `wget -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/setup.sh | bash` 
+# or by this short link `wget -O - https://bit.ly/2miZQZR | bash`
 echo "Setup runs ..."
 
 echo "Install openssh-server:"
