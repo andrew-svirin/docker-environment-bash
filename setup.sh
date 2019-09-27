@@ -28,7 +28,7 @@ echo -e "\e[30;48;5;82m samba config backuped to: \e[0m \e[38;5;198m $SAMBA_CONF
 
 echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m for access dir \e[0m \e[38;5;198m /var/www/ \e[0m :"
 SAMBA_CONF_TMP=smb.conf
-sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/smb.conf | sed $
+sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/smb.conf | sed -e "s/\$USER/$USER/g" > $SAMBA_CONF_TMP
 sudo mv $SAMBA_CONF_TMP $SAMBA_CONF
 
 exit
