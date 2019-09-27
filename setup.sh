@@ -15,8 +15,10 @@ echo "Setup runs ..."
 
 echo "Install openssh-server:"
 sudo apt install openssh-server
+echo -e "\e[30;48;5;82m openssh-server installed \e[0m"
 
 echo "Install samba:"
 sudo apt install samba
+echo -e "\e[30;48;5;82m samba installed \e[0m"
 
 exit
