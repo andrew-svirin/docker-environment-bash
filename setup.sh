@@ -30,5 +30,6 @@ echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m
 SAMBA_CONF_TMP=smb.conf
 sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/smb.conf | sed -e "s/\$USER/$USER/g" > $SAMBA_CONF_TMP
 sudo mv $SAMBA_CONF_TMP $SAMBA_CONF
+sudo service smbd restart
 
 exit
