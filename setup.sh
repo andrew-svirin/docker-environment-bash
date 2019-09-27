@@ -97,4 +97,5 @@ sudo systemctl enable docker
 echo "Start docker right now"
 sudo systemctl start docker
 
+echo "\e[30;48;5;82m Setup finished. Please re-login in the system to apply users groups! \e[0m"
 exit
