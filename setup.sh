@@ -26,10 +26,20 @@ SAMBA_CONF_BACKUP=/etc/samba/smb.conf.$(date '+%d-%m-%Y-%H-%M-%S')
 sudo cp /etc/samba/smb.conf $SAMBA_CONF_BACKUP
 echo -e "\e[30;48;5;82m samba config backuped to: \e[0m \e[38;5;198m $SAMBA_CONF_BACKUP \e[0m"
 
-echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m for access dir \e[0m \e[38;5;198m /var/www/ \e[0m :"
+WWW_DIR=/var/www
+echo "Prepare folder: $WWW_DIR"
+sudo mkdir $WWW_DIR
+sudo chmod 777 $WWW_DIR
+
+echo "Add user group: www-data"
+sudo groupadd www-data
+sudo /usr/sbin/usermod -aG www-data
+
+echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m for access dir \e[0m \e[38;5;198m $WWW_DIR \e[0m :"
 SAMBA_CONF_TMP=smb.conf
 sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/smb.conf | sed -e "s/\$USER/$USER/g" > $SAMBA_CONF_TMP
 sudo mv $SAMBA_CONF_TMP $SAMBA_CONF
+
 sudo service smbd restart
 
 exit
