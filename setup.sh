@@ -102,7 +102,8 @@ sudo systemctl start docker
 # Instructions https://success.docker.com/article/how-do-i-enable-the-remote-api-for-dockerd
 echo "Open remote connection to docker"
 if [ ! -f /etc/systemd/system/docker.service.d/override.conf ]; then
-  sudo mkdir /etc/systemd/system/docker.service.d
+  # Make dir if not exists.
+  sudo mkdir -p /etc/systemd/system/docker.service.d
   DOCKER_SERVICE_CONF=override.conf
   sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/docker.override.conf > $DOCKER_SERVICE_CONF
   sudo mv $DOCKER_SERVICE_CONF /etc/systemd/system/docker.service.d
