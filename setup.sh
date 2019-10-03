@@ -48,7 +48,8 @@ sudo mv $SAMBA_CONF_TMP $SAMBA_CONF
 
 sudo service smbd restart
 
-IP="192"`ip addr | sed -En "s/127.0.0.1//;s/.*inet (addr:)?192(([0-9]*\.){3}[0-9]*).*/\2/p"`
+# Grab first IP record.
+IP=`ip addr | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p" | sed -n '1p'`
 echo -e "\e[30;48;5;82m samba configured \e[0m Use \e[38;5;198m \\\\\\\\$IP\\\\www \e[0m to mount disk in Windows"
 
 echo "Install GIT:"
