@@ -6,6 +6,7 @@
 # - Installs git
 # - Installs docker
 # - Installs docker-compose
+# - Open remote connection to dockerd socket
 # 
 # For launch command:
 # - install sudo `apt install sudo` by superuser.
@@ -96,6 +97,16 @@ echo "Add autostrat docker on boot"
 sudo systemctl enable docker
 echo "Start docker right now"
 sudo systemctl start docker
+
+# Instructions https://success.docker.com/article/how-do-i-enable-the-remote-api-for-dockerd
+echo "Open remote connection to docker"
+if [ ! -f /etc/systemd/system/docker.service.d/override.conf ]; then
+  sudo mkdir /etc/systemd/system/docker.service.d
+  echo $'[Service]\nExecStart=\ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375' > /etc/systemd/system/docker.service.d/override.conf
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker.service
+fi
+echo -e "\e[30;48;5;82m docker remote is \e[0m \e[38;5;198m tcp://$IP:2375 \e[0m"
 
 echo -e "\e[30;48;5;82m Setup finished. Please re-login in the system to apply users groups! \e[0m"
 exit
