@@ -103,7 +103,9 @@ sudo systemctl start docker
 echo "Open remote connection to docker"
 if [ ! -f /etc/systemd/system/docker.service.d/override.conf ]; then
   sudo mkdir /etc/systemd/system/docker.service.d
-  sudo echo $'[Service]\nExecStart=\ExecStart=/usr/bin/dockerd -H fd:// -H tcp://0.0.0.0:2375' > /etc/systemd/system/docker.service.d/override.conf
+  DOCKER_SERVICE_CONF=override.conf
+  sudo wget -q -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/docker.override.conf > $DOCKER_SERVICE_CONF
+  sudo mv $DOCKER_SERVICE_CONF /etc/systemd/system/docker.service.d
   sudo systemctl daemon-reload
   sudo systemctl restart docker.service
 fi
