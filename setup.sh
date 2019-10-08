@@ -42,7 +42,7 @@ sudo groupadd $USER_GROUP
 sudo /usr/sbin/usermod -aG $USER_GROUP $USER
 
 echo -e "Download samba config and setup username \e[0m \e[38;5;198m $USER \e[0m for access dir \e[0m \e[38;5;198m $WWW_DIR \e[0m :"
-SAMBA_CONF_TMP=smb.conf
+SAMBA_CONF_TMP=/tmp/smb.conf
 SAMBA_CONF_TPL=https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/configs/smb.conf
 sudo wget -q -O - $SAMBA_CONF_TPL | sed -e "s/\$USER/$USER/g" | sed -e "s/\$GROUP/$USER_GROUP/g" > $SAMBA_CONF_TMP
 sudo mv $SAMBA_CONF_TMP $SAMBA_CONF
