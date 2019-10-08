@@ -8,8 +8,8 @@
 # - Installs docker-compose
 # - Open remote connection to dockerd socket
 # 
-# REQUIREMENTS! 64bit architecture. Run `uname -a` to see what is your current architecture.
-# For launch command:
+# REQUIREMENTS!: 64bit architecture. Run `uname -a` to see what is your current architecture.
+# LAUNCH:
 # - install sudo `apt install sudo` by superuser.
 # - add current user to sudo group `/usr/sbin/usermod -aG sudo __CURRENT_USER__` by superuser and re-login.
 # Launch by command `wget -O - https://raw.githubusercontent.com/andrew-svirin/docker-environment-bash/master/setup.sh | bash` 
