@@ -16,11 +16,11 @@
 echo "Setup runs ..."
 
 echo "Install openssh-server:"
-sudo apt install -y openssh-server
+sudo apt-get -y install openssh-server
 echo -e "\e[30;48;5;82m openssh-server installed \e[0m"
 
 echo "Install samba:"
-sudo apt install -y samba
+sudo apt-get -y install samba
 echo -e "\e[30;48;5;82m samba installed \e[0m"
 
 echo "Make samba config backup:"
@@ -53,12 +53,12 @@ IP=`ip addr | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2
 echo -e "\e[30;48;5;82m samba configured \e[0m Use \e[38;5;198m \\\\\\\\$IP\\\\www \e[0m to mount disk in Windows"
 
 echo "Install GIT:"
-sudo apt install -y git
+sudo apt-get -y install git
 echo -e "\e[30;48;5;82m git installed \e[0m"
 
 # Instructions https://docs.docker.com/install/linux/docker-ce/debian/#install-using-the-repository
 echo "Install Docker last version and dependencies:"
-sudo apt-get install -y \
+sudo apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -75,10 +75,10 @@ sudo add-apt-repository \
    stable"
 
 echo "Update apt"
-sudo apt-get update -y
+sudo apt-get -y update
 
 echo "Install docker-ce docker-ce-cli containerd.io"
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 DOCKER_VERSION=`docker --version`
 echo -e "\e[30;48;5;82m docker installed \e[0m \e[38;5;198m $DOCKER_VERSION \e[0m"
 
