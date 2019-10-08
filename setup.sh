@@ -16,11 +16,11 @@
 echo "Setup runs ..."
 
 echo "Install openssh-server:"
-sudo apt install openssh-server
+sudo apt install openssh-server -y
 echo -e "\e[30;48;5;82m openssh-server installed \e[0m"
 
 echo "Install samba:"
-sudo apt install samba
+sudo apt install samba -y
 echo -e "\e[30;48;5;82m samba installed \e[0m"
 
 echo "Make samba config backup:"
@@ -53,7 +53,7 @@ IP=`ip addr | sed -En "s/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2
 echo -e "\e[30;48;5;82m samba configured \e[0m Use \e[38;5;198m \\\\\\\\$IP\\\\www \e[0m to mount disk in Windows"
 
 echo "Install GIT:"
-sudo apt install git
+sudo apt install git -y
 echo -e "\e[30;48;5;82m git installed \e[0m"
 
 # Instructions https://docs.docker.com/install/linux/docker-ce/debian/#install-using-the-repository
@@ -63,7 +63,8 @@ sudo apt-get install \
     ca-certificates \
     curl \
     gnupg2 \
-    software-properties-common
+    software-properties-common \
+    -y
 
 echo "Add Docker’s official GPG key:"
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -78,7 +79,7 @@ echo "Update apt"
 sudo apt-get update
 
 echo "Install docker-ce docker-ce-cli containerd.io"
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 DOCKER_VERSION=`docker --version`
 echo -e "\e[30;48;5;82m docker installed \e[0m \e[38;5;198m $DOCKER_VERSION \e[0m"
 
